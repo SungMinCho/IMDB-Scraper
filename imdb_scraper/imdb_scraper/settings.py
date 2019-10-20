@@ -12,4 +12,4 @@ FEED_FORMAT = 'json'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-DOWNLOAD_DELAY = 0.5
+DOWNLOAD_DELAY = 3
