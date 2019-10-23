@@ -2,7 +2,7 @@
 import scrapy
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
-from ..urllist import URLLIST
+from ..urllist import URLLIST, DONE
 
 
 class MovieSpider(CrawlSpider):
@@ -11,6 +11,8 @@ class MovieSpider(CrawlSpider):
 
     def start_requests(self):
       for url in URLLIST:
+        if url in DONE:
+          continue
         yield scrapy.Request(url=url, callback=self.parse_movie_detail_page)
 
 
